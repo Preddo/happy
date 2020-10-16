@@ -4,20 +4,20 @@
 <!-- Badges -->
 <p align="center">
   <a target="_blank" href="https://www.linkedin.com/in/pedro-soares-0a075916a/">
-      <img alt="Pedro Soares" src="https://img.shields.io/badge/-Pedro Soares-8257E5?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Pedro Soares" src="https://img.shields.io/badge/-Pedro Soares-FFD666?style=flat&logo=Linkedin&logoColor=black" />
   </a>
 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Preddo/happy?color=774DD6">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Preddo/happy?color=FFD666">
   
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Preddo/happy?color=774DD6">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Preddo/happy?color=FFD666">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Preddo/happy?color=774DD6">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Preddo/happy?color=FFD666">
 
   <a href="https://github.com/Preddo/happy/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Preddo/happy?color=774DD6">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Preddo/happy?color=FFD666">
   </a>
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-8257E5">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-FFD666">
 </p>
 
 <!-- Index -->
