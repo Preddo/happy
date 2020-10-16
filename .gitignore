@@ -1,6 +1,6 @@
 # Block uploads
-*/uploads
-!*/uploads/.gitkeep
+server/uploads/*
+!server/uploads/.gitkeep
 
 # dependencies
 /.pnp
