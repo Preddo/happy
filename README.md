@@ -4,20 +4,20 @@
 <!-- Badges -->
 <p align="center">
   <a target="_blank" href="https://www.linkedin.com/in/pedro-soares-0a075916a/">
-      <img alt="Pedro Soares" src="https://img.shields.io/badge/-Pedro Soares-00C7C7?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Pedro Soares" src="https://img.shields.io/badge/-Pedro Soares-2AB5D1?style=flat&logo=Linkedin&logoColor=white" />
   </a>
 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Preddo/happy?color=00C7C7">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Preddo/happy?color=2AB5D1">
   
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Preddo/happy?color=00C7C7">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Preddo/happy?color=2AB5D1">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Preddo/happy?color=00C7C7">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Preddo/happy?color=2AB5D1">
 
   <a href="https://github.com/Preddo/happy/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Preddo/happy?color=00C7C7">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Preddo/happy?color=2AB5D1">
   </a>
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-00C7C7">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-2AB5D1">
 </p>
 
 <!-- Index -->
@@ -82,7 +82,7 @@ Para conseguir rodar o projeto em sua máquina é necessário ter as seguintes f
 # Clonando o projeto para a máquina
 git clone https://github.com/Preddo/happy.git
 # Vai para a pasta do projeto happy
-cd proffy
+cd happy
 ```
 #### Iniciando Backend
 ```sh
@@ -95,7 +95,7 @@ yarn start
 ```
 #### Iniciando Frontend Web
 ```sh
-# Volta para a pasta proffy
+# Volta para a pasta happy
 cd ..
 # Vai para a pasta web
 cd web
@@ -106,7 +106,7 @@ yarn start
 ```
 #### Iniciando Frontend Mobile
 ```sh
-# Volta para a pasta proffy
+# Volta para a pasta happy
 cd ..
 # Vai para a pasta mobile
 cd mobile
