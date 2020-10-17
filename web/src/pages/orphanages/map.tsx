@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import api from '@/services/api';
 
-import { Container, Aside, Header, MarkerImg, Footer, Button, PlusIcon } from '@/styles/pages/orphanages/Map';
+import { Container, Aside, Header, MarkerImg, AsideFooter, Footer, Button, PlusIcon } from '@/styles/pages/orphanages/Map';
 
 import SEO from '@/components/SEO';
 
@@ -21,6 +21,8 @@ const Map = dynamic(
 )
 
 export default function OrphanagesMap() {
+  const router = useRouter();
+
   const [isPageLoading, setIsPageLoading] = useState(true);
 
   const [position, setPosition] = useState({ latitude: 0, longitude: 0});
@@ -58,27 +60,34 @@ export default function OrphanagesMap() {
             <p>Muitas crianças estão esperando a sua visita :)</p>
           </Header>
 
-          <Footer>
+          <AsideFooter>
             <strong>Rio de Janeiro</strong>
             <span>Rio de Janeiro</span>
-          </Footer>
+          </AsideFooter>
         </Aside>
 
 
-          {!isPageLoading &&
-            <Map
-              center={[position.latitude, position.longitude]}
-              zoom={16}
-              style={{ width: '100%', height: '100%', zIndex: 5 }}
-              orphanages={orphanages}
-            />
-          }
+        {!isPageLoading &&
+          <Map
+            center={[position.latitude, position.longitude]}
+            zoom={16}
+            style={{ width: '100%', height: '100%', zIndex: 5 }}
+            orphanages={orphanages}
+          />
+        }
 
-        <Link href="/orphanages/create" passHref>
-          <Button href="#" >
-            <PlusIcon />
-          </Button>
-        </Link>
+        <Footer>
+          <strong>{orphanages.length} instituições encontradas</strong>
+        </Footer>
+
+        <Button
+          onClick={() => router.push({
+            pathname: '/orphanages/create',
+            query: position }
+          )}
+        >
+          <PlusIcon />
+        </Button>
 
       </Container>
     </>

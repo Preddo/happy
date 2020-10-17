@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   min-height: 100vh;
+
+  flex-direction: column;
+
+  @media (min-width: 1100px) {
+    flex-direction: row;
+  }
 `;
 
 export const Main = styled.main`
@@ -10,19 +16,28 @@ export const Main = styled.main`
 `;
 
 export const OrphanageDatails = styled.div`
-  width: 700px;
-  margin: 64px auto;
+  width: 100%;
 
   background: #FFFFFF;
-  border: 1px solid #D3E2E5;
-  border-radius: 20px;
 
   overflow: hidden;
 
   > img {
     width: 100%;
-    height: 300px;
+    height: 260px;
     object-fit: cover;
+  }
+
+  @media (min-width: 1100px) {
+    width: 700px;
+    border-radius: 20px;
+    border: 1px solid #D3E2E5;
+
+    margin: 64px auto;
+
+    > img {
+      height: 300px;
+    }
   }
 `;
 
@@ -31,14 +46,17 @@ export const ImageGalley = styled.div`
   grid-template-columns: repeat(6 ,1fr);
   column-gap: 16px;
 
-  margin: 16px 40px 0;
+  margin: 16px auto 0;
+  padding: 0 22px;
 `;
 
 export const SelectImageButton = styled.button`
-  border: 0;
-  height: 88px;
+  border: none;
   background: none;
   cursor: pointer;
+
+  height: 16vw;
+  width: 16vw;
   border-radius: 20px;
   overflow: hidden;
   outline: none;
@@ -50,14 +68,26 @@ export const SelectImageButton = styled.button`
   }
 
   > img {
+    height: 100%;
     width: 100%;
-    height: 88px;
     object-fit: cover;
+  }
+
+  @media (min-width: 1100px) {
+    height: 88px;
+    width: auto;
+
+    > img {
+      width: 100%;
+      height: 88px;
+      object-fit: cover;
+    }
   }
 `;
 
 export const OrphanageDatailsContent = styled.div`
-  padding: 80px;
+  padding: 22px;
+  padding-top: 28px;
 
   > h1 {
     color: #4D6F80;
@@ -84,6 +114,10 @@ export const OrphanageDatailsContent = styled.div`
     font-size: 36px;
     line-height: 46px;
     color: #4D6F80;
+  }
+
+  @media (min-width: 1100px) {
+    padding: 80px;
   }
 `;
 

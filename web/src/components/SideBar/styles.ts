@@ -9,10 +9,14 @@ export const Container = styled.aside`
   padding: 32px 24px;
   background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: none;
+
+  @media (min-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const Logo = styled.img`

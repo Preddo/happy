@@ -6,8 +6,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo } from "react-icons/fi";
 import api from '@/services/api';
 
+import Loading from '@/components/Loading';
 import SEO from '@/components/SEO';
 import SideBar from '@/components/SideBar';
+import Header from '@/components/Header';
 
 import {
   Container,
@@ -58,7 +60,7 @@ export default function Orphanage(orphanage: IOrphanage ) {
   }, [])
 
   if (!orphanage || routes.isFallback) {
-    return <h1>Carregando...</h1>
+    return <Loading/>
   }
 
   return (
@@ -69,8 +71,12 @@ export default function Orphanage(orphanage: IOrphanage ) {
         image={orphanage.images[0].url}
         shouldExcludeTitleSuffix
       />
+
       <Container >
         <SideBar/>
+        <Header
+          title="Instituição de acolhimento"
+        />
 
         <Main>
           <OrphanageDatails>

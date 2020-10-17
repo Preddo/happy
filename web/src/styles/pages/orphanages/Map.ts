@@ -12,13 +12,17 @@ export const Container = styled.div`
 `;
 
 export const Aside = styled.div`
+  display: none;
+
   width: 440px;
   background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
   padding: 80px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @media (min-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 export const Header = styled.div`
@@ -47,7 +51,7 @@ export const MapContainer = styled.div`
   border-radius: 28px;
 `;
 
-export const Footer = styled.footer`
+export const AsideFooter = styled.footer`
   display: flex;
   flex-direction: column;
 
@@ -58,7 +62,36 @@ export const Footer = styled.footer`
   }
 `;
 
-export const Button = styled.a`
+export const Footer = styled.footer`
+  position: absolute;
+  z-index: 9;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+
+  height: 64px;
+  background: #fff;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.02));
+
+  > strong {
+    font-size: 16px;
+    margin-right: 68px;
+    padding-left: 20px;
+    color: #8FA7B2;
+  }
+
+  @media (min-width: 1100px) {
+    display: none;
+  }
+`;
+
+export const Button = styled.button`
   position: absolute;
   z-index: 10;
   right: 40px;
@@ -68,6 +101,7 @@ export const Button = styled.a`
   height: 64px;
   background-color: #15c3d6;
   border-radius: 20px;
+  border: none;
 
   display: flex;
   align-items: center;
@@ -83,3 +117,7 @@ export const Button = styled.a`
 export const PlusIcon = styled(FiPlus)`
   color: white;
 `;
+
+PlusIcon.defaultProps = {
+  size: 30
+}

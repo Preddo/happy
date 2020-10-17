@@ -5,7 +5,7 @@ interface SEOProps {
   description?: string;
   image?: string;
   shouldExcludeTitleSuffix?: boolean;
-  shouldIndexPage?: boolean; 
+  shouldIndexPage?: boolean;
 }
 
 export default function SEO({
@@ -15,7 +15,7 @@ export default function SEO({
   shouldExcludeTitleSuffix = false,
   shouldIndexPage = true
 }: SEOProps) {
-  const pageTitle = `${title} ${!shouldExcludeTitleSuffix && '| Leve a felicidade para o mundo'}`;
+  const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| Leve a felicidade para o mundo' : ''}`;
   const pageImage = image ? `http://localhost:3000/${image}` : null;
 
   return (

@@ -3,6 +3,11 @@ import { FiPlus } from "react-icons/fi";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1100px) {
+    flex-direction: row;
+  }
 `;
 
 export const Main = styled.main`
@@ -10,14 +15,12 @@ export const Main = styled.main`
 `;
 
 export const Form = styled.form`
-  width: 700px;
-  margin: 64px auto;
+  width: 100%;
 
   background: #FFFFFF;
   border: 1px solid #D3E2E5;
-  border-radius: 20px;
 
-  padding: 64px 80px;
+  padding: 22px;
 
   overflow: hidden;
 
@@ -40,6 +43,14 @@ export const Form = styled.form`
       margin-bottom: 40px;
       padding-bottom: 24px;
     }
+  }
+
+  @media (min-width: 1100px) {
+    width: 700px;
+    border-radius: 20px;
+
+    margin: 64px auto;
+    padding: 64px 80px;
   }
 `;
 
@@ -96,29 +107,46 @@ export const ImageGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 16px;
+  overflow-x: visible;
 
   > img {
-    width: 96px;
-    height: 96px;
+    height: 14vw;
+    width: 14vw;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 3.5vw;
   }
 
   > input {
     display: none;
   }
+
+  @media (min-width: 1100px) {
+    > img {
+      width: 96px;
+      height: 96px;
+      border-radius: 20px;
+    }
+  }
 `;
 
 export const LabelAddImage = styled.label`
-  height: 96px;
+  height: 14vw;
+  width: 14vw;
+
   background: #F5F8FA;
   border: 1px dashed #96D2F0;
-  border-radius: 20px;
+  border-radius: 3.5vw;
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1100px) {
+    height: 96px;
+    width: 96px;
+    border-radius: 20px;
+  }
 `;
 
 export const PlusIcon = styled(FiPlus)`

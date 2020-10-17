@@ -5,6 +5,7 @@ import { useEffect, useState, useCallback, FormEvent, ChangeEvent } from 'react'
 import api from '@/services/api';
 
 import SideBar from '@/components/SideBar';
+import Header from '@/components/Header';
 
 import { Container, Main, Form, MapContainer, InputWrapper, ImageGallery, LabelAddImage, PlusIcon, SelectWrapper, SelectButton, ConfirmButton } from '@/styles/pages/orphanages/Create';
 
@@ -18,8 +19,17 @@ export default function CreateOrphanage() {
 
   const router = useRouter();
 
+  const [position, setPosition] = useState(() => {
+    const { latitude, longitude } = router.query;
+
+    if ( latitude && longitude ) {
+      return { latitude: Number(latitude), longitude: Number(longitude) };
+    } else {
+      return { latitude: 0, longitude: 0 };
+    }
+  });
+
   const [name, setName] = useState('');
-  const [position, setPosition] = useState({ latitude: 0, longitude: 0});
   const [about, setAbout] = useState('');
   const [instructions, setInstructions] = useState('');
   const [openingHours, setOpeningHours] = useState('');
@@ -69,9 +79,9 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
 
-    await api.post('orphanages/', data);
+    await api.post('orphanages', data);
 
-    router.push('orphanages/creationcompleted');
+    router.push('/orphanages/creationcompleted');
   }, [])
 
   useEffect(() => {
@@ -81,23 +91,30 @@ export default function CreateOrphanage() {
   return (
     <Container>
       <SideBar />
+      <Header
+        title="Adicione uma instituição"
+        showCancel
+      />
 
       <Main>
         <Form onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
             <legend>Dados</legend>
 
-            <MapContainer>
-              {!isPageLoading &&
-                <Map
-                  center={[-27.2092052,-49.6401092]}
-                  style={{ width: '100%', height: 280 }}
-                  zoom={15}
-                  onClick={handleMapClick}
-                  selectedPosition={position}
-                />
-              }
-            </MapContainer>
+            <InputWrapper>
+              <label>Localização <span>Clique no mapa para registrar a localização</span></label>
+              <MapContainer>
+                {!isPageLoading &&
+                  <Map
+                    center={[position.latitude, position.longitude]}
+                    style={{ width: '100%', height: 280 }}
+                    zoom={15}
+                    onClick={handleMapClick}
+                    selectedPosition={position}
+                  />
+                }
+              </MapContainer>
+            </InputWrapper>
 
             <InputWrapper>
               <label htmlFor="name">Nome</label>
@@ -187,5 +204,3 @@ export default function CreateOrphanage() {
     </Container>
   );
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
