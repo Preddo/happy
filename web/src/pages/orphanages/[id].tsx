@@ -133,7 +133,7 @@ export default function Orphanage(orphanage: IOrphanage ) {
                   {orphanage.opening_hours}
                 </div>
 
-                {orphanage.opening_hours ? (
+                {orphanage.open_on_weekends ? (
                   <div className="open-on-weekends">
                     <FiInfo size={32} color="#39CC83" />
                     Atendemos <br />
