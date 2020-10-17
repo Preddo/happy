@@ -71,7 +71,7 @@ export default function CreateOrphanage() {
 
     await api.post('orphanages/', data);
 
-    router.back();
+    router.push('orphanages/creationcompleted');
   }, [])
 
   useEffect(() => {

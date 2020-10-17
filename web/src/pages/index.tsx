@@ -18,7 +18,7 @@ export default function Home() {
 
           <Main>
             <h1>Leve felicidade para o mundo</h1>
-            <p>Visite orfanatos e mude o dia de muitas crianças.</p>
+            <p>Visite instituições de acolhimento e mude o dia de muitas crianças.</p>
           </Main>
 
           <Location>
