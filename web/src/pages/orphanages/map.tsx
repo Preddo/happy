@@ -30,7 +30,13 @@ export default function OrphanagesMap() {
 
   useEffect(() => {
     api.get('orphanages').then(response => {
-      setOrphanages(response.data);
+      setOrphanages(response.data.map(orphanage => ({
+        id:  orphanage.id,
+        name:  orphanage.name,
+        latitude: Number(orphanage.latitude),
+        longitude: Number(orphanage.longitude),
+        about: orphanage.about
+      })));
     })
 
     navigator.geolocation.getCurrentPosition((position) => {

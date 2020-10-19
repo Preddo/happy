@@ -7,7 +7,19 @@ import api from '@/services/api';
 import SideBar from '@/components/SideBar';
 import Header from '@/components/Header';
 
-import { Container, Main, Form, MapContainer, InputWrapper, ImageGallery, LabelAddImage, PlusIcon, SelectWrapper, SelectButton, ConfirmButton } from '@/styles/pages/orphanages/Create';
+import {
+  Container,
+  Main,
+  Form,
+  MapContainer,
+  InputWrapper,
+  ImageGallery,
+  LabelAddImage,
+  PlusIcon,
+  SelectWrapper,
+  SelectButton,
+  ConfirmButton
+} from '@/styles/pages/orphanages/Create';
 
 const Map = dynamic(
   () => import('../../components/Map'),
@@ -60,7 +72,7 @@ export default function CreateOrphanage() {
     setPreviewImages(selectedImagesPreview);
   }, [])
 
-  const handleSubmit = useCallback( async (event: FormEvent) => {
+  const handleSubmit = useCallback( (event: FormEvent) => {
     event.preventDefault();
 
     const { latitude, longitude } = position;
@@ -79,7 +91,11 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
 
-    await api.post('orphanages', data);
+    console.log(data);
+
+    api.post('orphanages', data).catch(err => {
+      console.log(err);
+    });
 
     router.push('/orphanages/creationcompleted');
   }, [])
