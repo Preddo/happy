@@ -49,7 +49,7 @@ O Happy surgiu com a missão de trazer felicidade para todas as crianças que es
 
 <!-- Demo da Aplicação Web -->
 ## Demo da Aplicação Web
-![Web Application](assets/ProffyWebDemo.gif)
+![Web Application](assets/web-demo.gif)
 
 <!-- Demo da Aplicação Mobile -->
 ## Demo da Aplicação Mobile
