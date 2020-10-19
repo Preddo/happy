@@ -15,6 +15,7 @@ export default {
 
     return response.json(OrphanageView.renderMany(orphanages))
   },
+
   async show(request: Request, response: Response) {
     const { id } = request.params;
 
@@ -30,6 +31,7 @@ export default {
 
     return response.json(OrphanageView.render(orphanage));
   },
+
   async create(request: Request, response: Response) {
     const {
       name,
@@ -44,8 +46,13 @@ export default {
     const orphanagesRepository = getRepository(Orphanage);
 
     const requestImages = request.files as Express.Multer.File[];
+
     const images = requestImages.map(image => {
-      return { path: image.filename }
+      return {
+        url: process.env.STORAGE_TYPE === "local"
+        ? image.filename
+        : image.key
+        }
     })
 
     const data = {
@@ -69,7 +76,7 @@ export default {
       open_on_weekends: Yup.boolean().required(),
       images: Yup.array(
         Yup.object().shape({
-          path: Yup.string().required()
+          url: Yup.string().required()
         })
       )
     })

@@ -15,7 +15,7 @@ export class CreateImages1602606386548 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'path',
+            name: 'url',
             type: 'varchar',
           },
           {
@@ -37,6 +37,7 @@ export class CreateImages1602606386548 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+      await queryRunner.dropForeignKey('images', 'ImageOrphanage')
       await queryRunner.dropDatabase('images');
     }
 

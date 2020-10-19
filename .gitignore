@@ -39,6 +39,7 @@ web/build
 */yarn-error.log*
 
 # local env files
+*/.env
 */.env.local
 */.env.development.local
 */.env.test.local
@@ -46,3 +47,7 @@ web/build
 
 # vercel
 */.vercel
+
+# Ormconfig Json
+server/ormconfig.bla.js
+server/ormconfig.json

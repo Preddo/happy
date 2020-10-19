@@ -52,10 +52,5 @@ export default {
     } else {
       callback(new Error("Invalid file type."), undefined);
     }
-  },
-  config: {
-    aws: {
-      bucket: 'orphanage-storage'
-    }
   }
 }

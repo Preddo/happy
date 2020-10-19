@@ -72,6 +72,7 @@ No projeto do aplicativo utilizei a ferramenta **expo** para criar meu projeto e
 Para conseguir rodar o projeto em sua máquina é necessário ter as seguintes ferramentas instaladas
 - Node.js
 - NPM ou Yarn
+- Docker
 - Expo
 
 <!-- Como Executar -->
@@ -90,6 +91,10 @@ cd happy
 cd server
 # Instala as dependências
 yarn
+# Cria um container com a imagem do Postgres ! Importante criar uma database dentro do container com o nome happy
+docker run --name nlw -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+# Roda as migrations do banco de dados
+yarn typeorm migration:run
 # Executa o servidor
 yarn start
 ```
