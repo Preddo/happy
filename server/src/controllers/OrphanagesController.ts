@@ -47,7 +47,7 @@ export default {
 
     const requestImages = request.files as Express.Multer.File[];
 
-    const images = requestImages.map(image => {
+    const images = requestImages.map((image ) => {
       return {
         url: process.env.STORAGE_TYPE === "local"
         ? image.filename
